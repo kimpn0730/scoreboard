@@ -3,9 +3,6 @@ import './App.css';
 import { Header } from './components/Header';
 import { Player } from './components/Player';
 
-
-
-
 //  function 컴포넌트에서 class 컴포넌트로 변경
 class App extends  React.Component {
   state = {
