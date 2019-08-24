@@ -1,46 +1,10 @@
 import React from 'react';
 import './App.css';
 import { Header } from './components/Header';
+import { Player } from './components/Player';
 
-class Counter extends React.Component {
-  state = {
-    score: 0,
-    a: 10
-  };
 
-  constructor(){
-    super();
-    this.handleChangeScore = this.handleChangeScore.bind(this);
-  }
 
-  handleChangeScore(delta) {
-    console.log('incrementScore', this);
-    // state를 변경하는 방법은 setState() 밖에 없다.
-    // this.state.score += 1;
-    this.setState(prevState => ({score: this.state.score + delta}));
-  }
-
-  // 이벤트의 오른쪽은 함수 선언문이 들어가야 한다.
-  render() {
-    return (
-      <div className="counter">
-        <button className="counter-action decrement" onClick={() => this.handleChangeScore(-1)}> -</button>
-        <span className="counter-score">{this.state.score}</span>
-        <button className="counter-action increment" onClick={() => this.handleChangeScore(1)}> +</button>
-      </div>
-    )
-  }
-}
-
-const Player = (props) => (
-  <div className="player">
-		<span className="player-name">
-			<button className="remove-player" onClick={() => props.removePlayer(props.id)}> x </button>
-      {props.name}
-		</span>
-    <Counter />
-  </div>
-);
 
 //  function 컴포넌트에서 class 컴포넌트로 변경
 class App extends  React.Component {
