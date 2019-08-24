@@ -12,7 +12,7 @@ const Header = ({title, totalPlayers}) => {
     </header>
   )
 };
-
+ 
 class Counter extends React.Component {
   state = {
     score: 0,
